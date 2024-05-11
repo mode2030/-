@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع عضله</title>
+</head>
+<body>
+    <CENTER>
+    <H1>مرحبا بك في موقع عضلة</H1>
+    </CENTER>
+    <h2>تسجيل الدخول</h2>
+    <label for="loginUsername">الاسم:</label>
+    <input type="text" id="loginUsername">
+    <br>
+    <label for="loginPassword">كلمة السر:</label>
+    <input type="password" id="loginPassword">
+    <br>
+    <button onclick="login()">تسجيل</button>
+
+    <h2>تسجيل حساب</h2>
+    <label for="registerUsername">الاسم:</label>
+    <input type="text" id="registerUsername">
+    <br>
+    <label for="registerPassword">كلمة السر:</label>
+    <input type="password" id="registerPassword">
+    <br>
+    <button onclick="register()">حفظ</button>
+    
+    <script>
+        function login() {
+            let username = document.getElementById('loginUsername').value;
+            let password = document.getElementById('loginPassword').value;
+            let storedUsername = localStorage.getItem('username');
+            let storedPassword = localStorage.getItem('password');
+            if (username === storedUsername && password === storedPassword) {
+                alert('Login successful!');
+                window.location.href = "file:///C:/Users/CompuStore/OneDrive/Desktop/الصفحة الرئسية/مشروع البرمجة.html";
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        }
+
+        function register() {
+            let username = document.getElementById('registerUsername').value;
+            let password = document.getElementById('registerPassword').value;
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+            alert('Account registered successfully!');
+            window.location.href = "file:///C:/Users/CompuStore/OneDrive/Desktop/الصفحة الرئسية/مشروع البرمجة.html";
+        }
+    </script>
+</body>
+</html>
